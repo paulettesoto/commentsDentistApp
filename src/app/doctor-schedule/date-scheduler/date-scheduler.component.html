@@ -1,40 +1,34 @@
 <div class="content">
-  <h3>Agregar horarios de atención</h3>
-<div class="flex">
-  <div class="fecha">
-    
-    <clr-date-container>
-      <label>Fecha</label>
-      <input
-        type="date"
-        autocomplete="off"
-        clrDate
-        name="demo"
-        [(ngModel)]="date"
-      />
-    </clr-date-container>
-    <button class="btn btn-primary" id="buscar" (click)="search()">
+    <h3>Agregar horarios de atención</h3>
+    <div class="flex">
+        <div class="fecha">
+
+            <clr-date-container>
+                <label>Fecha</label>
+                <input type="date" autocomplete="off" clrDate name="demo" [(ngModel)]="date" />
+            </clr-date-container>
+            <button class="btn btn-danger" id="buscar" (click)="search()">
       Buscar
     </button>
-  </div>
-  <p>
-    Hora 
-    <input class="addhora" type="time" name="eta" [(ngModel)]="hour" />
-    
-    <button class="btn btn-primary" id="add" (click)="agregar()">
+        </div>
+        <p>
+            Hora
+            <input class="addhora" type="time" name="eta" [(ngModel)]="hour" />
+
+            <button class="btn btn-danger" id="add" (click)="agregar()">
       Agregar
     </button>
-  </p>
-</div>
-  <div class="horarios">
-    <ng-container *ngFor="let date of usagedDates">
-      <a role="tooltip" aria-haspopup="true" class="tooltip tooltip-xs">
-        <button id="deletehour" type="button" class="btn btn-icon horario" aria-label="home" (click)="deletehour(date.id)">
+        </p>
+    </div>
+    <div class="horarios">
+        <ng-container *ngFor="let date of usagedDates">
+            <a role="tooltip" aria-haspopup="true" class="tooltip tooltip-xs">
+                <button id="deletehour" type="button" class="btn btn-danger-outline horario" aria-label="home" (click)="deletehour(date.id)">
           {{ formatHora(date.hora) }}
         </button>
-        <span class="tooltip-content">Eliminar</span>
-      </a>
-      
-    </ng-container>
-  </div>
+                <span class="tooltip-content">Eliminar</span>
+            </a>
+
+        </ng-container>
+    </div>
 </div>

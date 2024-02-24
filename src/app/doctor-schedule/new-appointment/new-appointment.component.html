@@ -1,110 +1,63 @@
-
-    <div class="content">
-      <form class="appointmentGroup" >
+<div class="content">
+    <form class="appointmentGroup">
         <div class="title">
             <h1>Agendar paciente</h1>
         </div>
         <div class="primerfila">
             <clr-input-container>
                 <label class="clr-sr-only">Celular</label>
-                <input
-                  type="text"
-                  autocomplete="phonenumber"
-                  name="phonenumber"
-                  clrInput
-                  placeholder="Celular"
-                  [(ngModel)]="phonenumber"
-                />
-              </clr-input-container>
-              <clr-input-container>
+                <input type="text" autocomplete="phonenumber" name="phonenumber" clrInput placeholder="Celular" [(ngModel)]="phonenumber" />
+            </clr-input-container>
+            <clr-input-container>
                 <label class="clr-sr-only">Nombre(s)</label>
-                <input
-                  type="text"
-                  autocomplete="name"
-                  name="name"
-                  clrInput
-                  placeholder="Nombre(s)"
-                  [(ngModel)]="name"
-                />
-              </clr-input-container>
-              <clr-input-container>
+                <input type="text" autocomplete="name" name="name" clrInput placeholder="Nombre(s)" [(ngModel)]="name" />
+            </clr-input-container>
+            <clr-input-container>
                 <label class="clr-sr-only">Primer apellido</label>
-                <input
-                  type="text"
-                  autocomplete="lastname"
-                  name="lastname"
-                  clrInput
-                  placeholder="Primer apellido"
-                  [(ngModel)]="lastname"
-                />
-              </clr-input-container>
-              <clr-input-container>
+                <input type="text" autocomplete="lastname" name="lastname" clrInput placeholder="Primer apellido" [(ngModel)]="lastname" />
+            </clr-input-container>
+            <clr-input-container>
                 <label class="clr-sr-only">Segundo apellido</label>
-                <input
-                  type="text"
-                  autocomplete="lastname2"
-                  name="lastname2"
-                  clrInput
-                  placeholder="Segundo apellido"
-                  [(ngModel)]="lastname2"
-                />
-              </clr-input-container>
-              <select clrSelect name="treatments" [(ngModel)]="treatment">
+                <input type="text" autocomplete="lastname2" name="lastname2" clrInput placeholder="Segundo apellido" [(ngModel)]="lastname2" />
+            </clr-input-container>
+            <select clrSelect name="treatments" [(ngModel)]="treatment">
                 <option *ngFor="let treatment of treatments" value="{{ treatment.id }}">
                   {{ treatment.tratamiento}}
                 </option>
               </select>
-              <button type="submit" class="btn btn-primary" (click)="agendar()">Agendar</button>  
-        </div> 
+            <button type="submit" class="btn btn-danger" (click)="agendar()">Agendar</button>
+        </div>
         <div class="segundafila">
             <clr-input-container>
                 <label class="clr-sr-only">Correo</label>
-                <input
-                  type="text"
-                  autocomplete="email"
-                  name="email"
-                  clrInput
-                  placeholder="Correo"
-                  [(ngModel)]="email"
-                />
-              </clr-input-container>
-                
-              <clr-input-container>
+                <input type="text" autocomplete="email" name="email" clrInput placeholder="Correo" [(ngModel)]="email" />
+            </clr-input-container>
+
+            <clr-input-container>
                 <label class="clr-sr-only">Edad</label>
-                <input
-                  type="text"
-                
-                  name="age"
-                  clrInput
-                  placeholder="Edad"
-                  [(ngModel)]="age"
-                />
-              </clr-input-container>
-              <clr-date-container>
+                <input type="text" name="age" clrInput placeholder="Edad" [(ngModel)]="age" />
+            </clr-input-container>
+            <clr-date-container>
                 <label>Fecha de nacimiento</label>
                 <input type="datebirth" autocomplete="off" clrDate name="datebirth" [(ngModel)]="datebirth " />
-              </clr-date-container>
-             
-              <clr-date-container>
+            </clr-date-container>
+
+            <clr-date-container>
                 <label>Fecha</label>
                 <input type="date" autocomplete="off" clrDate name="date" [(ngModel)]="date " />
-              </clr-date-container>
-              <button type="submit" class="btn btn-primary buscar" (click)="disponibles()">Buscar</button>
-              
-          </div>  
-          <div class="horarios">
+            </clr-date-container>
+            <button type="submit" class="btn btn-danger buscar" (click)="disponibles()">Buscar</button>
+
+        </div>
+        <div class="horarios">
             <ng-container *ngFor="let date of availableDates">
-              <button type="button" class="btn btn-icon horario" aria-label="home" [ngClass]="getButtonClass(date)" (click)="onSelect(date)">
+                <button type="button" class="btn btn-icon horario" aria-label="home" [ngClass]="getButtonClass(date)" (click)="onSelect(date)">
                 {{ formatHora(date.hora) }}
               </button>
             </ng-container>
-            
-          </div>   
 
-           
-      </form>
-  </div>
+        </div>
 
 
-
-
+    </form>
+</div>

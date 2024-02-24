@@ -1,41 +1,39 @@
+<div class="content">
+    <p class="filtrado">
 
-    <div class="content">
-        <p class="filtrado">
-          
-            <clr-date-container>
-                <label>Filtrar por fecha</label>
-                <input type="date" autocomplete="off" clrDate name="date" [(ngModel)]="date" />
-            
-            </clr-date-container>
-            <button id="search" class="btn btn-primary" (click)="search()">Buscar</button>
-        </p>
-       <button class="btn btn-primary print" (click)="generatePDFWeek()">Agenda semanal</button>
-       <button class="btn btn-primary print" (click)="generatePDFmonth()">Reporte mensual</button>
-        
-      <div class="grid">
-        <div class="cita" *ngFor="let date of dates.slice((page - 1) * paged, page * paged)" id="{{date.id}}" >
-               
-                <p>{{date.fecha}} Hora: {{formatHora(date.hora)}}</p>
-                <p>Paciente: {{date.Nombre}}</p>
-                <p>Tratamiento:{{date.tratamiento}}</p>
-                <ng-container *ngIf="date.confirmada === 0; else confirmadaTemplate">
-                    <p id="confirmacion">No Confirmada</p>
-                    <button id="message" class="btn btn-success-outline btn-sm" (click)="message(date.Nombre,date.fecha,date.hora, date.Doctor,date.id,date.Celular)">Recordatorio</button>
-                </ng-container>
+        <clr-date-container>
+            <label>Filtrar por fecha</label>
+            <input type="date" autocomplete="off" clrDate name="date" [(ngModel)]="date" />
 
-                <ng-template #confirmadaTemplate>
-                    <p id="confirmacion">Confirmada</p>
-                </ng-template>
-                    <button id="cancel" class="btn btn-danger-outline btn-sm"(click)="canceldate(date.id)">Cancelar</button>
-                
+        </clr-date-container>
+        <button id="search" class="btn btn-danger" (click)="search()">Buscar</button>
+    </p>
+    <button class="btn btn-danger print" (click)="generatePDFWeek()">Agenda semanal</button>
+    <button class="btn btn-danger print" (click)="generatePDFmonth()">Reporte mensual</button>
+
+    <div class="grid">
+        <div class="cita" *ngFor="let date of dates.slice((page - 1) * paged, page * paged)" id="{{date.id}}">
+
+            <p>{{date.fecha}} Hora: {{formatHora(date.hora)}}</p>
+            <p>Paciente: {{date.Nombre}}</p>
+            <p>Tratamiento:{{date.tratamiento}}</p>
+            <ng-container *ngIf="date.confirmada === 0; else confirmadaTemplate">
+                <p id="confirmacion">No Confirmada</p>
+                <button id="message" class="btn btn-success-outline btn-sm" (click)="message(date.Nombre,date.fecha,date.hora, date.Doctor,date.id,date.Celular)">Recordatorio</button>
+            </ng-container>
+
+            <ng-template #confirmadaTemplate>
+                <p id="confirmacion">Confirmada</p>
+            </ng-template>
+            <button id="cancel" class="btn btn-danger-outline btn-sm" (click)="canceldate(date.id)">Cancelar</button>
+
         </div>
 
-      </div>
-      <div class="pages">
-        <i class="fi fi-br-arrow-left" (click)="paginador(-1)"></i>
-        {{ page }} de {{ pages }}
-        <i class="fi fi-br-arrow-right" (click)="paginador(1)"></i>
-      </div>
-        
-       
     </div>
+    <div class="pages">
+        <i class="fi fi-br-arrow-left" (click)="paginador(-1)"></i> {{ page }} de {{ pages }}
+        <i class="fi fi-br-arrow-right" (click)="paginador(1)"></i>
+    </div>
+
+
+</div>

@@ -90,7 +90,7 @@ export class NewAppointmentComponent implements OnInit {
     }
   }
   getButtonClass(date: any): string {
-    return this.selectedHour === date.hora ? 'btn btn-primary' : 'btn btn-outline';
+    return this.selectedHour === date.hora ? 'btn btn-danger' : 'btn btn-danger-outline';
   }
 
   tratamientos() {
