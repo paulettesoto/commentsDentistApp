@@ -93,7 +93,12 @@ export class LoginComponent implements OnInit{
 
         } else {
           // Manejar el caso en el que el usuario no es un número
-          alert("Contraseña o usuario incorectos");
+          Swal.fire({
+    
+            text: 'Contraseña o usuario incorrecto',
+            icon: 'error',
+          
+          })
         }
       },
       (error) => {
