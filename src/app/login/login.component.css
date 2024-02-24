@@ -14,7 +14,7 @@
 .header {
     margin: 0;
     background: url(../../assets/logo-removebg.png) center center / contain no-repeat;
-    background-size: 180px;
+    background-size: 8rem;
     height: 15rem;
     width: 100% !important;
 }
