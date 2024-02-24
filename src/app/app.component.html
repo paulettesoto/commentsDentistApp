@@ -1,27 +1,29 @@
 <body cds-theme="">
-  <div class="container" *ngIf="type !== null; else elseBlock">
-    <!-- Header -->
-    <app-header></app-header>
+    <div class="container" *ngIf="type !== null; else elseBlock">
+        <!-- Header -->
+        <app-header></app-header>
 
-    <!-- Contenedor principal -->
-    <div class="flex-container">
-      <!-- Navbar -->
-      <div class="navbar-container">
-        <ng-container *ngIf="type == '1'">
-          <app-navbar></app-navbar>
-        </ng-container>
-        <ng-container *ngIf="type == '2'">
-          <app-navbarpatient></app-navbarpatient>
-        </ng-container>
-      </div>
+        <!-- Contenedor principal -->
+        <div class="flex-container">
+            <!-- Navbar -->
+            <div class="navbar-container">
+                <ng-container *ngIf="type == '1'">
+                    <app-navbar></app-navbar>
+                </ng-container>
+                <ng-container *ngIf="type == '2'">
+                    <app-navbarpatient></app-navbarpatient>
+                </ng-container>
+            </div>
 
-      <!-- Router Outlet -->
-      <div class="router-outlet-container">
-        <router-outlet></router-outlet>
-      </div>
+            <!-- Router Outlet -->
+            <div class="router-outlet-container">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+        <app-footer></app-footer>
     </div>
-  </div>
-  <ng-template #elseBlock> <router-outlet></router-outlet></ng-template>
+    <ng-template #elseBlock>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </ng-template>
 </body>
-
-<app-footer></app-footer>

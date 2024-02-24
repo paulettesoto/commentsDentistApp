@@ -32,6 +32,10 @@ export class PatientslistComponent implements OnInit {
     }
 
   }
+  clinicalrecords(){
+    
+    this.route.navigate(['/patients/patientdetail/clinical-records']);
+  }
   toggleFuncion() {
     // Cambiar el valor del toggle
     this.toggleValue = !this.toggleValue;

@@ -1,27 +1,21 @@
 <div class="content">
-  <h3>Lista de pacientes</h3>
-  <button class="btn btn-link" (click)="toggleFuncion()">DoctorApp</button>
+    <h3>Lista de pacientes</h3>
+    <!--<button class="btn btn-link" (click)="toggleFuncion()">DoctorApp</button>-->
 
-  <div class="grid">
-    <div
-      class="patient"
-      *ngFor="let patient of patients.slice((page - 1) * paged, page * paged)"
-      (click)="patientdetail(patient)"
-    >
-      <div class="info">
-        <p>
-          Nombre: {{ patient.Nombre }} {{ patient.PrimerApe }}
-          {{ patient.SegundoApe }}
-        </p>
-        <p>Celular: {{ patient.celular }}</p>
-        <p>Correo: {{ patient.correo }}</p>
-      </div>
+    <div class="grid">
+        <div class="patient" *ngFor="let patient of patients.slice((page - 1) * paged, page * paged)" (click)="clinicalrecords()">
+            <div class="info">
+                <p>
+                    Nombre: {{ patient.Nombre }} {{ patient.PrimerApe }} {{ patient.SegundoApe }}
+                </p>
+                <p>Celular: {{ patient.celular }}</p>
+                <p>Correo: {{ patient.correo }}</p>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="pages">
-    <i class="fi fi-br-arrow-left" (click)="paginador(-1)"></i>
-    {{ page }} de {{ pages }}
-    <i class="fi fi-br-arrow-right" (click)="paginador(1)"></i>
-  </div>
+    <div class="pages">
+        <i class="fi fi-br-arrow-left" (click)="paginador(-1)"></i> {{ page }} de {{ pages }}
+        <i class="fi fi-br-arrow-right" (click)="paginador(1)"></i>
+    </div>
 </div>
