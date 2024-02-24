@@ -3,6 +3,10 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { storageService } from '../storage.service';
+import Swal from 'sweetalert2'
+
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -24,6 +28,7 @@ export class LoginComponent implements OnInit{
   login() {
     if(!this.type||!this.user||!this.password){
       alert("Faltan campos por llenar");
+    
     }else{
 
     
