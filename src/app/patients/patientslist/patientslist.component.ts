@@ -32,8 +32,11 @@ export class PatientslistComponent implements OnInit {
     }
 
   }
-  clinicalrecords(){
-    
+  clinicalrecords(patient:any){
+    this.storage.setDataItem("idPaciente", patient.id);
+    this.storage.setDataItem("NombrePaciente", patient.Nombre);
+    this.storage.setDataItem("Apellido1Paciente", patient.PrimerApe);
+    this.storage.setDataItem("Apellido2Paciente", patient.SegundoApe);    
     this.route.navigate(['/patients/patientdetail/clinical-records']);
   }
   toggleFuncion() {

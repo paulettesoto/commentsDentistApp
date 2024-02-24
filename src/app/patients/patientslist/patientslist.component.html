@@ -3,7 +3,7 @@
     <!--<button class="btn btn-link" (click)="toggleFuncion()">DoctorApp</button>-->
 
     <div class="grid">
-        <div class="patient" *ngFor="let patient of patients.slice((page - 1) * paged, page * paged)" (click)="clinicalrecords()">
+        <div class="patient" *ngFor="let patient of patients.slice((page - 1) * paged, page * paged)" (click)="clinicalrecords(patient)">
             <div class="info">
                 <p>
                     Nombre: {{ patient.Nombre }} {{ patient.PrimerApe }} {{ patient.SegundoApe }}

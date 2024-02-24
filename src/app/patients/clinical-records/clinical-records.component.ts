@@ -29,7 +29,10 @@ export class ClinicalRecordsComponent implements OnInit {
   }
  
   ngOnInit(): void {
+    this.flag=0;
     this.preguntas();
+    this.answers()
+    
   }
   preguntas() {
 
@@ -42,6 +45,7 @@ export class ClinicalRecordsComponent implements OnInit {
           if (response && response.clinicalRecords) {
             this.clinicalRecords = response.clinicalRecords;
             console.log(response.clinicalRecords);
+            this.flag=1;
           } else {
             console.error('Error:', response);
           }
@@ -62,7 +66,8 @@ export class ClinicalRecordsComponent implements OnInit {
       // Realiza la solicitud POST
         this.http.post(url, {headers}).subscribe(
           (response: any) => {
-            this.flag=1;
+            console.log(response);
+            
         // Manejar la respuesta según tus necesidades
       },
       (error) => {
@@ -122,6 +127,38 @@ generatePDF() {
       }
     },
     (error) => {
+      console.error('Error:', error);
+    }
+  );
+}
+
+answers() {
+  const url = 'https://doctorappbackend-wpqd.onrender.com/clinicalRecords-answers/clinicalRecords-answers';
+
+  const params = new HttpParams()
+    .set('idDoctor', this.storage.getDataItem('user'))
+    .set('idPaciente', this.idPacient)
+    .set('cuenta', 0);
+  
+
+  this.http.get(url, { params }).subscribe(
+    (response: any) => {
+      console.log(url,params);
+      console.log(response);
+      if (response && response.clinicalRecordsAnswers) {
+
+        this.clinicalRecordsAnswers = response.clinicalRecordsAnswers;
+        console.log(response.clinicalRecordsAnswers);
+        this.flag=2;
+        
+      } else {
+        
+      console.log(this.flag);
+        console.error('Error:', response);
+      }
+    },
+    (error) => {
+      
       console.error('Error:', error);
     }
   );

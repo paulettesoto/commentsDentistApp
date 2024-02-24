@@ -1,11 +1,17 @@
 <div class="content">
     <h3>Historia Clinica</h3>
-    <button class="btn btn-primary pdf" (click)="generatePDF()">Generar PDF</button>
-    <div class="records" *ngFor="let record of clinicalRecords">
-        <label>{{ record.pregunta }}</label>
-        <textarea clrTextarea [(ngModel)]="record.respuesta" name="respuesta" required></textarea>
+    <button class="btn btn-danger pdf" (click)="generatePDF()">Generar PDF</button>
+    <div class="preguntas" *ngIf="flag == 1; else elseBlock">
+        <div class="questions" *ngFor="let record of clinicalRecords">
+            <label>{{ record.pregunta }}</label>
+            <textarea clrTextarea [(ngModel)]="record.respuesta" name="respuesta" required></textarea>
+        </div>
+        <button class="btn btn-danger" (click)="enviarRespuestas()">Enviar Respuestas</button>
     </div>
-    <button class="btn btn-primary" (click)="enviarRespuestas()">Enviar Respuestas</button>
-
-
+    <ng-template #elseBlock>
+        <div class="anwers" *ngFor="let record of clinicalRecordsAnswers">
+            <label>{{ record.pregunta }}</label>
+            <label>{{ record.respuesta }}</label>
+        </div>
+    </ng-template>
 </div>
