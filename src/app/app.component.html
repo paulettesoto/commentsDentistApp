@@ -24,6 +24,10 @@
     </div>
     <ng-template #elseBlock>
         <router-outlet></router-outlet>
-        <app-footer></app-footer>
+
     </ng-template>
+
 </body>
+<div *ngIf="type == null; ">
+    <app-footer></app-footer>
+</div>
