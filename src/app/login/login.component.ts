@@ -27,8 +27,13 @@ export class LoginComponent implements OnInit{
 
   login() {
     if(!this.type||!this.user||!this.password){
-      alert("Faltan campos por llenar");
+    // alert("Faltan campos por llenar");
+    Swal.fire({
     
+      text: 'Faltan datos por llenar',
+      icon: 'error',
+    
+    })
     }else{
 
     

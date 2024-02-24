@@ -90,28 +90,33 @@ generatePDF() {
         console.log(response.clinicalRecordsAnswers);
 
         const doc = new jsPDF.jsPDF();
-
+        const imagePath = '../../assets/logo-removebg.png';
+        const xCoordinate = 80;
+        const yCoordinate = 10;
+        const imageWidth = 60;  // Ancho de la imagen en mm
+        const imageHeight = 30;  // Alto de la imagen en mm
+        doc.addImage(imagePath, 'PNG', xCoordinate, yCoordinate, imageWidth, imageHeight);
         // Agregar contenido al PDF
-        doc.setFont('Arial');
-       
-        
-        doc.setFontSize(15);
-        doc.text('Reporte de Historial Clínico', 20, 10);
+        doc.setFont('bold');
+        doc.setFontSize(18);
+        doc.text('Historial clínico', 90, 50);
 
         doc.setFontSize(12);
-        doc.text(`Paciente: ${this.nombre} ${this.apellido1} ${this.apellido2}`, 20, 20);
+        const nombre= `${this.nombre} ${this.apellido1} ${this.apellido2}`;
+        const nombre_pdf=`historial_${nombre}.pdf`;
+        doc.text(`Paciente: ${nombre}`, 20, 20);
 
-        let yPosition = 30;
+        let yPosition = 60;
 
         this.clinicalRecordsAnswers.forEach((recordA: any) => {
           doc.text(`${recordA.pregunta}`, 20, yPosition);
-          yPosition += 10;
+          yPosition += 5;
           doc.text(`${recordA.respuesta}`, 20, yPosition);
-          yPosition += 15; // Ajusta el espaciado según tus necesidades
+          yPosition += 10; // Ajusta el espaciado según tus necesidades
         });
 
         // Guardar o mostrar el PDF (puedes personalizar esto según tus necesidades)
-        doc.save('reporte.pdf');
+        doc.save(nombre_pdf);
       } else {
         console.error('Error:', response);
       }
