@@ -1,40 +1,47 @@
-.cita{
-    background-color: var(--cds-alias-utility-light-blue-tint);
+.cita {
+    background-color: var(--cds-alias-status-danger-tint);
     margin-top: 50px;
     margin-left: 30px;
     width: 400px;
     height: 200px;
     border-radius: 2rem;
     padding: .3rem 1rem .3rem 1rem;
-    box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-info) ;  
-    -webkit-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-info);
-    -moz-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-info) ;
+    box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-danger-shade);
+    -webkit-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-danger-shade);
+    -moz-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-danger-shade);
 }
-#search{
- margin-top: 3%;
- margin-left: 1%;
-  
+
+#search {
+    margin-top: 3%;
+    margin-left: 1%;
 }
-#cancel{
+
+#cancel {
     width: 6rem;
     margin: -25% 0 0 65%;
 }
+
 #message {
     margin: -38% 0 0 65%;
     width: 6rem;
 }
+
 .confirmacion {
-    font-weight: bold; /* Añadido para resaltar el estado de confirmación */
-    font-size: 1.2rem; /* Añadido para ajustar el tamaño del texto */
+    font-weight: bold;
+    /* Añadido para resaltar el estado de confirmación */
+    font-size: 1.2rem;
+    /* Añadido para ajustar el tamaño del texto */
 }
-p{
+
+p {
     margin: 0;
 }
-.grid{
+
+.grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-.filtrado{
+
+.filtrado {
     display: flex;
 }
-
