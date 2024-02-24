@@ -1,86 +1,67 @@
-
-    <div class="content">
-        <h3>Agregar información</h3>
-        <div class="treatments">
-          <p>Agregar tratamiento </p>
-            <input
-              type="text"
-              name="treatment"
-              clrInput
-           
-              [(ngModel)]="treatment"
-            /> 
-            <p>Precio </p>
-            <input
-            class="precio"
-            type="text"           
-            name="precio"
-            clrInput
-           
-            [(ngModel)]="precio"
-          /> 
-          <button class="btn btn-primary" (click)="add_treatments()">Agregar tratamiento</button>
-        </div>
-        <div class="table-treatments">
-          <table class="table">
+<div class="content">
+    <h3>Agregar información</h3>
+    <div class="treatments">
+        <p>Agregar tratamiento </p>
+        <input type="text" name="treatment" clrInput [(ngModel)]="treatment" />
+        <p>Precio </p>
+        <input class="precio" type="text" name="precio" clrInput [(ngModel)]="precio" />
+        <button class="btn btn-primary" (click)="add_treatments()">Agregar tratamiento</button>
+    </div>
+    <div class="table-treatments">
+        <table class="table">
             <thead>
-              <tr>
-                <th>Tratamiento</th>
-                <th>Costo</th>
-                <th>Acciones</th>
-              </tr>
+                <tr>
+                    <th>Tratamiento</th>
+                    <th>Costo</th>
+                    <th>Acciones</th>
+                </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let treatment of treatments.slice((page - 1) * paged, page * paged)">
-                <td>{{ treatment.tratamiento }}</td>
-                <td>${{ treatment.costo }}</td>
-                <td><cds-icon shape="trash" solid="true" (click)="deletetreatment(treatment.id)"></cds-icon></td>
-              </tr>
-              
-            </tbody>
-            
-          </table>
-          <div class="pages">
-            <i class="fi fi-br-arrow-left" (click)="paginador(-1)"></i>
-            {{ page }} de {{ pages }}
-            <i class="fi fi-br-arrow-right" (click)="paginador(1)"></i>
-          </div>
-        </div>
-    
-        <div class="questions">
-          <p>Agregar pregunta </p>
-            <input
-            class="renglon"
-              type="text"
-              name="question"
-              clrInput
-             
-              [(ngModel)]="question"
-            /> 
-          
-          <button class="btn btn-primary" id="btn_question" (click)="add_question()">Agregar pregunta</button>
-        </div>
-        <div class="table-questions">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Pregunta</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody >
-              <tr *ngFor="let question of questions.slice((page2 - 1) * paged, page2 * paged)">
-                <td>{{ question.pregunta }}</td>
-                <td><cds-icon shape="trash" solid="true" (click)="deletequestion(question.id)"></cds-icon></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="pages">
-            <cds-icon shape="rewind" (click)="paginador2(-1)"></cds-icon>
-              {{ page2 }} de {{ pages2 }}
-            <cds-icon shape="fast-forward" (click)="paginador2(1)"></cds-icon>
-          </div> 
-        </div>
+                <tr *ngFor="let treatment of treatments.slice((page - 1) * paged, page * paged)">
+                    <td>{{ treatment.tratamiento }}</td>
+                    <td>${{ treatment.costo }}</td>
+                    <td>
+                        <cds-icon shape="trash" solid="true" (click)="deletetreatment(treatment.id)"></cds-icon>
+                    </td>
+                </tr>
 
-        
+            </tbody>
+
+        </table>
+        <div class="pages">
+            <i class="fi fi-br-arrow-left" (click)="paginador(-1)"></i> {{ page }} de {{ pages }}
+            <i class="fi fi-br-arrow-right" (click)="paginador(1)"></i>
+        </div>
     </div>
+
+    <div class="questions">
+        <p>Agregar pregunta </p>
+        <input class="renglon" type="text" name="question" clrInput [(ngModel)]="question" />
+
+        <button class="btn btn-primary" id="btn_question" (click)="add_question()">Agregar pregunta</button>
+    </div>
+    <div class="table-questions">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Pregunta</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let question of questions.slice((page2 - 1) * paged, page2 * paged)">
+                    <td>{{ question.pregunta }}</td>
+                    <td>
+                        <cds-icon shape="trash" solid="true" (click)="deletequestion(question.id)"></cds-icon>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pages">
+            <i class="fi fi-br-arrow-left" (click)="paginador2(-1)"></i> {{ page2 }} de {{ pages2 }}
+            <i class="fi fi-br-arrow-right" (click)="paginador2(1)"></i>
+        </div>
+    </div>
+
+
+</div>
