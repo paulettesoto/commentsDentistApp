@@ -32,7 +32,7 @@ import {RespuestasComponent} from './patient/respuestas/respuestas.component';
 
 const routes: Routes = [
   //{ path: "", component: AppComponent, pathMatch: "full" },
-  { path: "", component: PageprincipalComponent, pathMatch: "full" },
+  { path: "", component: LoginComponent, pathMatch: "full" },
   { path: "login", component: LoginComponent, pathMatch: "full"},
   { path: "register", component: RegisterComponent, pathMatch: "full"},
   

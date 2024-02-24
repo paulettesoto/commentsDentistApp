@@ -1,39 +1,29 @@
-  <form class="login">
+<div class="header">
+
+</div>
+<form class="login">
     <section class="title">
-      <!-- These could be heading elements. -->
-      <div class="welcome">DoctorApp</div>
+        <!-- These could be heading elements. -->
+        <div class="welcome">Iniciar sesion</div>
     </section>
+
     <div class="login-group">
-      <clr-select-container>
-        <label>Usuario</label>
-        <select clrSelect name="type" [(ngModel)]="type">
+        <!--<clr-select-container>
+            <label>Usuario</label>
+            <select clrSelect name="type" [(ngModel)]="type">
           <option value="patient">Paciente</option>
           <option value="doctor">Doctor</option>
         </select>
-      </clr-select-container>
-      <clr-input-container>
-        <label class="clr-sr-only">E-mail</label>
-        <input
-          type="text"
-          autocomplete="username"
-          name="username"
-          clrInput
-          placeholder="Usuario"
-          [(ngModel)]="user"
-        />
-      </clr-input-container>
-      <clr-password-container>
-        <label class="clr-sr-only">Password</label>
-        <input
-          type="password"
-          autocomplete="current-password"
-          name="password"
-          clrPassword
-          placeholder="Contraseña"
-          [(ngModel)]="password"
-        />
-      </clr-password-container>
-      <button type="submit" class="btn btn-primary" (click)="login()">Log in</button>
-      <a routerLink="/"  class="signup">Sign up for an account</a>
+        </clr-select-container>-->
+        <clr-input-container>
+            <label class="clr-sr-only">E-mail</label>
+            <input type="text" autocomplete="username" name="username" clrInput placeholder="Usuario" [(ngModel)]="user" />
+        </clr-input-container>
+        <clr-password-container>
+            <label class="clr-sr-only">Password</label>
+            <input type="password" autocomplete="current-password" name="password" clrPassword placeholder="Contraseña" [(ngModel)]="password" />
+        </clr-password-container>
+        <button type="submit" class="btn btn-danger" (click)="login()">Ingresar</button>
+        <!--<a routerLink="/" class="signup">Sign up for an account</a>-->
     </div>
-  </form>
+</form>

@@ -1,12 +1,12 @@
 <header class="custom-header">
-  <div class="text-container">
-    <span id="prefix"> {{ prefix }} </span>
-    <span id="name"> &nbsp;{{ nombre }} </span>
-    <span id="apellido1">&nbsp;{{ apellido1 }} </span>
-    <span id="apellido2">&nbsp;{{ apellido2 }} </span>
-  </div>
-  <div class="right">
-    <img
+    <div class="text-container">
+        <span id="prefix"> {{ prefix }} </span>
+        <span id="name"> &nbsp;{{ nombre }} </span>
+        <span id="apellido1">&nbsp;{{ apellido1 }} </span>
+        <span id="apellido2">&nbsp;{{ apellido2 }} </span>
+    </div>
+    <div class="right">
+        <!--<img
       (click)="togglemode()"
       [src]="
         mod
@@ -14,12 +14,7 @@
           : '../../assets/simbolo-de-sol-negro-solido.png'
       "
       [ngClass]="{ 'dark-mode': mod, 'light-mode': !mod }"
-    />
-    <cds-icon
-      size="lg"
-      shape="logout"
-      solid="true"
-      (click)="logout()"
-    ></cds-icon>
-  </div>
+    />-->
+        <cds-icon size="lg" shape="logout" solid="true" (click)="logout()"></cds-icon>
+    </div>
 </header>

@@ -1,12 +1,24 @@
-.login{
+.login {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform:translate(-50%,-50%) ;
-    box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-info) ;  
-    -webkit-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-info);
-    -moz-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-info) ;
+    transform: translate(-50%, -50%);
+    box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-danger-shade);
+    -webkit-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-danger-shade);
+    -moz-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-danger-shade);
     border-radius: 10%;
     padding: 2rem;
-    background-color: var(--cds-alias-status-neutral-tint) ;
+    background-color: var(--cds-alias-status-neutral-tint);
+}
+
+.header {
+    margin: 1% 0;
+    background: url(../../assets/logo-removebg.png) center center / contain no-repeat;
+    background-size: 180px;
+    height: 50 rem;
+    width: 100%;
+}
+
+.btn {
+    margin: 3% 25%;
 }

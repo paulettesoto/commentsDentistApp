@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit{
   constructor(private http:HttpClient, private route:Router,private storage: storageService) {}
   user= '';
   password= '';
-  type= '';
+  type= 'doctor';
   ngOnInit(): void {
     
   }

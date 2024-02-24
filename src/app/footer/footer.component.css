@@ -1,6 +1,22 @@
-.footer{
-    background-color: var(--cds-alias-object-container-background-shade);
-  color: white;
-  padding: 10px;
-  text-align: center;
+.footer {
+    background-color: rgba(255, 0, 0, 0.6);
+    padding: 10px;
+    text-align: center;
+}
+
+.letter {
+    color: white;
+    line-height: 0.4;
+    margin-bottom: 1%;
+}
+
+.icons {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    justify-content: space-around;
+}
+
+i {
+    color: white;
 }
