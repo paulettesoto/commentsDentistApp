@@ -161,7 +161,7 @@ export class ServicePanelComponent implements OnInit {
           (response: any) => {
             if (response && response.clinicalRecords) {
               this.questions = response.clinicalRecords;
-              this.pages=Math.ceil(this.questions.length/this.paged);
+              this.pages2=Math.ceil(this.questions.length/this.paged);
               console.log(this.questions);
             } else {
               console.error('Error:', response);
