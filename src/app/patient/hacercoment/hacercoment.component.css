@@ -1,29 +1,22 @@
-.content{
+.content {
     margin-top: 1%;
+    text-align: center;
+    justify-content: center;
 }
 
-  #enviar{
- 
-    margin-left: 15%;
-  }
-  .form{
-   
-    margin-left: -20%;
-  }
-  .div{
-    background-color: var(--cds-alias-utility-light-blue-tint);
-
-    width: 27%;
-    height: 40%;
+.div {
+    margin-left: 40%;
+    background-color: var(--cds-alias-status-danger-tint);
+    width: 15rem;
+    height: 12rem;
     border-radius: 2rem;
     padding: 1rem;
-    box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-info) ;  
-    -webkit-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-info);
-    -moz-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-info) ;
-  }
-  .description{
+    box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-danger-shade);
+    -webkit-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-danger-shade);
+    -moz-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-danger-shade);
+}
+
+.description {
     width: 250px;
     height: 100px;
-  }
-
-  
+}

@@ -7,12 +7,12 @@
         <ng-container *ngFor="let i of [].constructor(5); let index = index">
             <cds-icon class="star" shape="star" *ngIf="index < calificacion" solid="true" (click)="giveCalification(index+1)"></cds-icon>
             <cds-icon class="star" shape="star" *ngIf="index >= calificacion" solid="false" (click)="giveCalification(index+1)"></cds-icon>
-          </ng-container>
+        </ng-container>
 
         <clr-textarea-container>
             <textarea clrTextarea [(ngModel)]="comentar" class="description" required placeholder="Agregar un comentario"></textarea>
         </clr-textarea-container>
-        <button type="submit" class="btn btn-primary" id="enviar" (click)="enviar()">Enviar comentario</button>
+        <button type="submit" class="btn btn-danger" id="enviar" (click)="enviar()">Enviar comentario</button>
 
     </div>
 </div>

@@ -54,6 +54,7 @@ export class HacercomentComponent {
           icon: 'success',
         
         })
+        window.close();
         //alert("Comentario enviado");
         // Manejar la respuesta según tus necesidades
       },
