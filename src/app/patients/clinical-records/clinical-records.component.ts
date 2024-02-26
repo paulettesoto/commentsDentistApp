@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { storageService } from 'src/app/storage.service';
 import { Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
+import Swal from 'sweetalert2'
 
 import * as jsPDF from 'jspdf';
 
@@ -29,7 +30,6 @@ export class ClinicalRecordsComponent implements OnInit {
   }
  
   ngOnInit(): void {
-    this.flag=0;
     this.preguntas();
     this.answers()
     
@@ -45,7 +45,6 @@ export class ClinicalRecordsComponent implements OnInit {
           if (response && response.clinicalRecords) {
             this.clinicalRecords = response.clinicalRecords;
             console.log(response.clinicalRecords);
-            this.flag=1;
           } else {
             console.error('Error:', response);
           }
@@ -75,7 +74,13 @@ export class ClinicalRecordsComponent implements OnInit {
       }
     );
   });
-    alert("Respuestas enviadas");
+  Swal.fire({
+    
+    text: 'Respuestas enviadas',
+    icon: 'success',
+  
+  })
+    //alert("Respuestas enviadas");
     this.route.navigate(['/patients/patientslist']);
   
 }
@@ -109,9 +114,9 @@ generatePDF() {
         doc.setFontSize(12);
         const nombre= `${this.nombre} ${this.apellido1} ${this.apellido2}`;
         const nombre_pdf=`historial_${nombre}.pdf`;
-        doc.text(`Paciente: ${nombre}`, 20, 20);
+        doc.text(`Nombre: ${nombre}`, 20, 60);
 
-        let yPosition = 60;
+        let yPosition = 70;
 
         this.clinicalRecordsAnswers.forEach((recordA: any) => {
           doc.text(`${recordA.pregunta}`, 20, yPosition);

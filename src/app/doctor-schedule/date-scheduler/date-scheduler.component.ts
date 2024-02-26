@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpParams,HttpHeaders } from '@angular/common/http';
 import { storageService } from 'src/app/storage.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-date-scheduler',
@@ -46,7 +47,13 @@ export class DateSchedulerComponent {
 
   search() {
     if(!this.date){
-      alert("Campo de fecha vacio");
+      Swal.fire({
+    
+        text: 'Campo de fecha vacio',
+        icon: 'error',
+      
+      })
+      //alert("Campo de fecha vacio");
     }else{
 
     
@@ -81,7 +88,13 @@ export class DateSchedulerComponent {
   
   agregar() {
     if(!this.hour){
-      alert("Campo de hora vacio");
+      Swal.fire({
+    
+        text: 'Campo de hora vacio',
+        icon: 'error',
+      
+      })
+      //alert("Campo de hora vacio");
     }else{
       const hora = this.hour;
       const url = `https://doctorappbackend-wpqd.onrender.com/schedules/addDates?idDoctor=${this.storage.getDataItem('user')}&fecha=${this.formatdate(this.date)}&hora=${hora}&status=true`;
@@ -93,7 +106,12 @@ export class DateSchedulerComponent {
           this.http.post(url, {headers}).subscribe(
             (response: any) => {
           console.log('Solicitud POST exitosa:', response);
-          alert("Hora agregada");
+          Swal.fire({
+            text: 'Hora agregada',
+            icon: 'success',
+          
+          })
+          //alert("Hora agregada");
           this.search();
           // Manejar la respuesta según tus necesidades
         },
@@ -113,7 +131,13 @@ export class DateSchedulerComponent {
           (response: any) => {
             if (response && response.success) {
               console.log("horario cancelado");
-              alert("Hora eliminada");
+              Swal.fire({
+    
+                text: 'Hora eliminada',
+                icon: 'success',
+              
+              })
+              //alert("Hora eliminada");
               this.search();
             } else {
               console.error('Error:', response);

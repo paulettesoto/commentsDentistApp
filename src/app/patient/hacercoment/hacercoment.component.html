@@ -1,15 +1,15 @@
 <div class="content">
-   
-        <h2>Calificar doctor</h2>
-        <br>
-        <div class="div">
+
+    <h2>Califica tu visita a la Dra. Karen Lara</h2>
+    <br>
+    <div class="div">
         <label>Calificación </label>
-        <input type="number" id="calificacion"  min="0" max="5" [(ngModel)]="calificacion"/>
- 
-            <clr-textarea-container>
+        <input type="number" id="calificacion" min="0" max="5" [(ngModel)]="calificacion" />
+
+        <clr-textarea-container>
             <textarea clrTextarea [(ngModel)]="comentar" class="description" required placeholder="Agregar un comentario"></textarea>
-            </clr-textarea-container>
-            <button type="submit" class="btn btn-primary" id="enviar" (click)="enviar()">Enviar comentario</button>
-  
+        </clr-textarea-container>
+        <button type="submit" class="btn btn-primary" id="enviar" (click)="enviar()">Enviar comentario</button>
+
     </div>
 </div>

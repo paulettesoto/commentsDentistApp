@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { HttpClient, HttpParams,HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { storageService } from 'src/app/storage.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-hacercoment',
@@ -28,9 +29,15 @@ export class HacercomentComponent {
   
   enviar(){
     if(!this.comentar|| !this.calificacion){
-      alert("Faltan campos por llenar");
+      Swal.fire({
+    
+        text: 'Faltan datos por llenar',
+        icon: 'error',
+      
+      })
+      //alert("Faltan campos por llenar");
     }else{
-      const url = `https://doctorappbackend-wpqd.onrender.com/patientcomments/comentarios_paciente?comentario=${this.comentar}&calificacion=${this.calificacion}&idDoctor=${this.storage.getDataItem('idDoctor')}`;
+      const url = `https://doctorappbackend-wpqd.onrender.com/patientcomments/comentarios_paciente?comentario=${this.comentar}&calificacion=${this.calificacion}&idDoctor=19`;
       const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'accept': 'application/json'
@@ -39,7 +46,13 @@ export class HacercomentComponent {
   this.http.post(url, {headers}).subscribe(
       (response: any) => {
         console.log('Solicitud POST exitosa:', response);
-        alert("Comentario enviado");
+        Swal.fire({
+    
+          text: 'Comentario enviado',
+          icon: 'success',
+        
+        })
+        //alert("Comentario enviado");
         // Manejar la respuesta según tus necesidades
       },
       (error) => {

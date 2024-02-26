@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { storageService } from 'src/app/storage.service';
 import { HttpClient,HttpHeaders, HttpParams } from '@angular/common/http';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-service-panel',
@@ -58,7 +59,13 @@ export class ServicePanelComponent implements OnInit {
   }
   add_treatments() {
     if(!this.treatment||!this.precio){
-      alert("Faltan campos por agregar");
+      Swal.fire({
+    
+        text: 'Faltan datos por llenar',
+        icon: 'error',
+      
+      })
+      //alert("Faltan campos por agregar");
     }else{
       const url = `https://doctorappbackend-wpqd.onrender.com/treatments/addTreatment?tratamiento=${this.treatment}&idDoctor=${this.storage.getDataItem("user")}&costo=${this.precio}`;
       const headers = new HttpHeaders({
@@ -69,7 +76,13 @@ export class ServicePanelComponent implements OnInit {
     this.http.post(url, {headers}).subscribe(
       (response: any) => {
         console.log('Solicitud POST exitosa:', response);
-        alert("Tratamiento exitoso");
+        Swal.fire({
+    
+          text: 'Tratamiento exitoso',
+          icon: 'success',
+        
+        })
+        //alert("Tratamiento exitoso");
         this.treatment='';
         this.precio='';
         this.treatmentlist();
@@ -84,7 +97,13 @@ export class ServicePanelComponent implements OnInit {
 
   add_question() {
     if(!this.question){
-      alert("No se ha agregado pregunta");
+      Swal.fire({
+    
+        text: 'No se ha agregado pregunta',
+        icon: 'error',
+      
+      })
+      //alert("No se ha agregado pregunta");
     }else{
       const url = `https://doctorappbackend-wpqd.onrender.com/clinicalRecords/addQuestion?pregunta=${this.question}&idDoctor=${this.storage.getDataItem("user")}`;
       const headers = new HttpHeaders({
@@ -95,7 +114,13 @@ export class ServicePanelComponent implements OnInit {
     this.http.post(url, {headers}).subscribe(
       (response: any) => {
         console.log('Solicitud POST exitosa:', response);
-        alert("Pregunta agregada");
+        Swal.fire({
+    
+          text: 'Pregunta agregada',
+          icon: 'success',
+        
+        })
+        //alert("Pregunta agregada");
         // Manejar la respuesta según tus necesidades
       this.question='';
       this.questionslist();
@@ -139,7 +164,13 @@ export class ServicePanelComponent implements OnInit {
           (response: any) => {
             if (response && response.success) {
               console.log("Tratamiento eliminado");
-              alert("Tratamiento eliminado");
+              //alert("Tratamiento eliminado");
+              Swal.fire({
+    
+                text: 'Tratamiento eliminado',
+                icon: 'success',
+              
+              })
               this.treatmentlist();
             } else {
               console.error('Error:', response);
@@ -183,7 +214,13 @@ export class ServicePanelComponent implements OnInit {
           (response: any) => {
             if (response && response.success) {
               console.log("pregunta eliminada");
-              alert("Pregunta eliminada");
+              Swal.fire({
+    
+                text: 'Pregunta eliminada',
+                icon: 'success',
+              
+              })
+              //alert("Pregunta eliminada");
               this.questionslist();
             } else {
               console.error('Error:', response);

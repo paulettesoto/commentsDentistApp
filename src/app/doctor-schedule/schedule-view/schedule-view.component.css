@@ -39,7 +39,9 @@ p {
 
 .grid {
     display: grid;
+    width: 90%;
     grid-template-columns: repeat(2, 1fr);
+    height: 400px;
 }
 
 .filtrado {

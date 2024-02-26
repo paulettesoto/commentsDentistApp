@@ -2,6 +2,8 @@ import { Component,OnInit } from '@angular/core';
 import { HttpClient, HttpParams,HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { storageService } from 'src/app/storage.service';
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-new-appointment',
   templateUrl: './new-appointment.component.html',
@@ -116,7 +118,13 @@ export class NewAppointmentComponent implements OnInit {
   }
   agendar(){
     if(!this.phonenumber||!this.name||!this.lastname||!this.lastname2||!this.age||!this.email||!this.date||!this.datebirth){
-      alert("Campos vacios");
+      Swal.fire({
+    
+        text: 'Faltan datos por llenar',
+        icon: 'error',
+      
+      })
+      //alert("Campos vacios");
     }else{
 
     
@@ -129,7 +137,13 @@ export class NewAppointmentComponent implements OnInit {
     this.http.post(url, {headers}).subscribe(
       (response: any) => {
         console.log('Solicitud POST exitosa:', response);
-        alert("Cita agregada");
+        Swal.fire({
+    
+          text: 'Cita agregada',
+          icon: 'success',
+        
+        })
+        //alert("Cita agregada");
         this.route.navigate(['/schedule/scheduleview']);
         this.phonenumber='';
         this.name='';

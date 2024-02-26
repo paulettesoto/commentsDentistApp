@@ -57,8 +57,8 @@ const routes: Routes = [
   { path: "perfilpatient/updatepasswordpatient", component: UpdatepasswordpatientComponent, pathMatch: "full" , canActivate: [AuthGuard]},
   { path: "favorites", component: FavoritesComponent, pathMatch: "full" , canActivate: [AuthGuard]},
   { path: "newdatepatient", component: NewdatpatientComponent, pathMatch: "full" , canActivate: [AuthGuard] },
-  { path: "hacercoment",component:HacercomentComponent,pathMatch: "full" , canActivate: [AuthGuard]},
-  { path: "respuestas", component:RespuestasComponent,pathMatch: "full" , canActivate: [AuthGuard]}
+  { path: "newcomment",component:HacercomentComponent,pathMatch: "full" },
+  { path: "respuestas", component:RespuestasComponent,pathMatch: "full" }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -5,6 +5,7 @@ import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import { storageService } from 'src/app/storage.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-edit-profile',
@@ -45,7 +46,13 @@ export class EditProfileComponent {
     // Validación básica de campos
     if (!this.name || !this.lastname || !this.lastname2  || !this.phonenumber || !this.email || !this.email) {
       console.error('Todos los campos deben ser completados');
-      alert("No se aceptan campos vacios");
+      Swal.fire({
+    
+        text: 'Faltan datos por llenar',
+        icon: 'error',
+      
+      })
+      //alert("No se aceptan campos vacios");
       return;
     }else{
       const url = `https://doctorappbackend-wpqd.onrender.com/doctors/update?idDoctor=${this.storage.getDataItem("user")}&Nombre=${this.name}&PrimerApe=${this.lastname}&SegundoApe=${this.lastname2}&Celular=${this.phonenumber}&Correo=${this.email}&Foto=${this.foto}}`;
@@ -57,6 +64,12 @@ export class EditProfileComponent {
       this.http.put(url, {headers}).subscribe(
         (response: any) => {
           console.log('Datos actualizados:', response);
+          Swal.fire({
+    
+            text: 'Datos actualizados',
+            icon: 'success',
+          
+          })
           alert("Datos actualizados");
           this.route.navigate(['/patients/patientslist']);
           // Manejar la respuesta si es necesario
