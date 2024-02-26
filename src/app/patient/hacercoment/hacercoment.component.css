@@ -4,7 +4,15 @@
     justify-content: center;
 }
 
+.header {
+    background: url(../../../assets/logo-removebg.png) center center / contain no-repeat;
+    background-size: 8rem;
+    height: 8rem;
+    width: 100% !important;
+}
+
 .div {
+    margin-left: 30rem;
     background-color: var(--cds-alias-status-danger-tint);
     width: 15rem;
     height: 12rem;
