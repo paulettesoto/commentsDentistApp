@@ -12,15 +12,16 @@
 }
 
 .div {
-    margin-left: 40%;
-    background-color: var(--cds-alias-status-danger-tint);
-    width: 15rem;
-    height: 12rem;
-    border-radius: 2rem;
-    padding: 1rem;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-danger-shade);
     -webkit-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-danger-shade);
     -moz-box-shadow: .2rem .2rem .5rem 0rem var(--cds-alias-status-danger-shade);
+    border-radius: 10%;
+    padding: 2rem;
+    background-color: var(--cds-alias-status-danger-tint);
 }
 
 .description {
