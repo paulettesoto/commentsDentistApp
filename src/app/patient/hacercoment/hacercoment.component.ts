@@ -54,7 +54,7 @@ export class HacercomentComponent {
           icon: 'success',
         
         })
-        window.close();
+        
         //alert("Comentario enviado");
         // Manejar la respuesta según tus necesidades
       },
@@ -64,6 +64,7 @@ export class HacercomentComponent {
   );
   this.comentar = '';
   this.calificacion = 0;
+  window.close();
 }
 }
 }
