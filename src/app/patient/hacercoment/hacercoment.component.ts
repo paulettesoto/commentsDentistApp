@@ -53,7 +53,12 @@ export class HacercomentComponent {
           text: 'Comentario enviado',
           icon: 'success',
         
-        })
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Si el usuario hace clic en "Aceptar", cierra la ventana
+            window.close();
+          }
+        });
         
         //alert("Comentario enviado");
         // Manejar la respuesta según tus necesidades
@@ -64,7 +69,6 @@ export class HacercomentComponent {
   );
   this.comentar = '';
   this.calificacion = 0;
-  window.close();
 }
 }
 }
