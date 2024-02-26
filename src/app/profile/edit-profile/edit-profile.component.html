@@ -1,72 +1,37 @@
 <div class="content">
-  <div class="register">
-    <form class="registerGroup">
-      <section class="title">
-        <!-- These could be heading elements. -->
-        <div class="welcome">
-          <h1>Datos personales</h1>
-        </div>
-      </section>
-      <div>
-        <clr-input-container>
-          <label class="clr-sr-only"></label>
-          <input
-            type="text"
-            autocomplete="name"
-            name="name"
-            clrInput
-            placeholder="Nombre(s)"
-            [(ngModel)]="name"
-          />
-        </clr-input-container>
-        <clr-input-container>
-          <label class="clr-sr-only"></label>
-          <input
-            type="text"
-            autocomplete="lastname"
-            name="lastname"
-            clrInput
-            placeholder="Primer apellido"
-            [(ngModel)]="lastname"
-          />
-        </clr-input-container>
-        <clr-input-container>
-          <label class="clr-sr-only"></label>
-          <input
-            type="text"
-            autocomplete="lastname2"
-            name="lastname2"
-            clrInput
-            placeholder="Segundo apellido"
-            [(ngModel)]="lastname2"
-          />
-        </clr-input-container>
-        <clr-input-container>
-          <label class="clr-sr-only">Celular</label>
-          <input
-            type="text"
-            autocomplete="phonenumber"
-            name="phonenumber"
-            clrInput
-            placeholder="Celular"
-            [(ngModel)]="phonenumber"
-          />
-        </clr-input-container>
-        <clr-input-container>
-          <label class="clr-sr-only">Correo</label>
-          <input
-            type="text"
-            autocomplete="email"
-            name="email"
-            clrInput
-            placeholder="Correo"
-            [(ngModel)]="email"
-          />
-        </clr-input-container>
-        <button type="submit" class="btn btn-primary" (click)="update()">
+    <div class="register">
+        <form class="registerGroup">
+            <section class="title">
+                <!-- These could be heading elements. -->
+                <div class="welcome">
+                    <h1>Datos personales</h1>
+                </div>
+            </section>
+            <div>
+                <clr-input-container>
+                    <label class="clr-sr-only"></label>
+                    <input type="text" autocomplete="name" name="name" clrInput placeholder="Nombre(s)" [(ngModel)]="name" />
+                </clr-input-container>
+                <clr-input-container>
+                    <label class="clr-sr-only"></label>
+                    <input type="text" autocomplete="lastname" name="lastname" clrInput placeholder="Primer apellido" [(ngModel)]="lastname" />
+                </clr-input-container>
+                <clr-input-container>
+                    <label class="clr-sr-only"></label>
+                    <input type="text" autocomplete="lastname2" name="lastname2" clrInput placeholder="Segundo apellido" [(ngModel)]="lastname2" />
+                </clr-input-container>
+                <clr-input-container>
+                    <label class="clr-sr-only">Celular</label>
+                    <input type="text" autocomplete="phonenumber" name="phonenumber" clrInput placeholder="Celular" [(ngModel)]="phonenumber" />
+                </clr-input-container>
+                <clr-input-container>
+                    <label class="clr-sr-only">Correo</label>
+                    <input type="text" autocomplete="email" name="email" clrInput placeholder="Correo" [(ngModel)]="email" />
+                </clr-input-container>
+                <button type="submit" class="btn btn-danger" (click)="update()">
           Modificar
         </button>
-      </div>
-    </form>
-  </div>
+            </div>
+        </form>
+    </div>
 </div>

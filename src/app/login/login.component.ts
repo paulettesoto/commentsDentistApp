@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit{
   password= '';
   type= 'doctor';
   ngOnInit(): void {
+    // Limpiar localStorage
+    this.storage.clearAllDataItems();
     
   }
 

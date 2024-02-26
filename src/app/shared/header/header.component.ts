@@ -28,7 +28,6 @@ export class HeaderComponent implements OnInit {
       this.nombre = this.storage.getDataItem('nombre');
       this.apellido1 = this.storage.getDataItem('apellido1');
       this.apellido2 = this.storage.getDataItem('apellido2');
-      // ... Otros procesos relacionados con la actualización de type
     });
 
 
