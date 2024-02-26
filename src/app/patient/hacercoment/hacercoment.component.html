@@ -4,7 +4,10 @@
     <br>
     <div class="div">
         <label>Calificación </label>
-        <input type="number" id="calificacion" min="0" max="5" [(ngModel)]="calificacion" />
+        <ng-container *ngFor="let i of [].constructor(5); let index = index">
+            <cds-icon class="star" shape="star" *ngIf="index < calificacion" solid="true" (click)="giveCalification(index+1)"></cds-icon>
+            <cds-icon class="star" shape="star" *ngIf="index >= calificacion" solid="false" (click)="giveCalification(index+1)"></cds-icon>
+          </ng-container>
 
         <clr-textarea-container>
             <textarea clrTextarea [(ngModel)]="comentar" class="description" required placeholder="Agregar un comentario"></textarea>

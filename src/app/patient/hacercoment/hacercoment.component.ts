@@ -26,7 +26,9 @@ export class HacercomentComponent {
    this.storage.getDataItem('idDoctor');
 
   }
-  
+  giveCalification(star:number){
+    this.calificacion =star;
+  }
   enviar(){
     if(!this.comentar|| !this.calificacion){
       Swal.fire({
