@@ -5,7 +5,6 @@
 }
 
 .div {
-    margin-left: 40%;
     background-color: var(--cds-alias-status-danger-tint);
     width: 15rem;
     height: 12rem;
